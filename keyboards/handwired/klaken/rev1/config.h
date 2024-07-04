@@ -28,8 +28,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // wiring of each half
 
 //TODO: Need to define this!
-#define MATRIX_COL_PINS { B0, F4, F5, F6, F7, B1, B3, B2 }
-#define MATRIX_ROW_PINS { D3, D2, D4, C6 }
+#define MATRIX_COL_PINS { F4, F5, F6, F7, B1, B3, B2, B6 }
+#define MATRIX_ROW_PINS { B7, C7, F1, F0 }
 
 //TODO: Is this actually correct?
 #define DIODE_DIRECTION COL2ROW
@@ -46,7 +46,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define MOUSEKEY_DELAY          0
 #define MOUSEKEY_TIME_TO_MAX    60
 #define MOUSEKEY_MAX_SPEED      7
-#define MOUSEKEY_WHEEL_DELAY 0
+#define MOUSEKEY_WHEEL_DELAY    0
 
 /* Set 0 if debouncing isn't needed */
 #define DEBOUNCE 5
