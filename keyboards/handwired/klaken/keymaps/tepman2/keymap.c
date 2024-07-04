@@ -1,6 +1,9 @@
 #include QMK_KEYBOARD_H
 #include "config.h"
 #include "debug.h"
+#ifdef CONSOLE_ENABLE
+#include "print.h"
+#endif
 
 // Helpful defines
 #define GRAVE_MODS  (MOD_BIT(KC_LSHIFT)|MOD_BIT(KC_RSHIFT)|MOD_BIT(KC_LGUI)|MOD_BIT(KC_RGUI)|MOD_BIT(KC_LALT)|MOD_BIT(KC_RALT))
@@ -89,6 +92,9 @@ void persistent_default_layer_set(uint16_t default_layer) {
 }
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    #ifdef CONSOLE_ENABLE
+    uprintf("KL: kc: 0x%04X, col: %2u, row: %2u, pressed: %u, time: %5u, int: %u, count: %u\n", keycode, record->event.key.col, record->event.key.row, record->event.pressed, record->event.time, record->tap.interrupted, record->tap.count);
+    #endif
   switch (keycode) {
     case QWERTY:
     default:
@@ -127,3 +133,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       break;
   }
 }
+
+#ifdef CONSOLE_ENABLE
+void keyboard_post_init_user(void) {
+    debug_enable=true;
+    debug_matrix=true;
+}
+#endif

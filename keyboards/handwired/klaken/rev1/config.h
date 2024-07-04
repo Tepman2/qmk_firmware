@@ -27,7 +27,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 // wiring of each half
 
-//TODO: Need to define this!
 #define MATRIX_COL_PINS { F4, F5, F6, F7, B1, B3, B2, B6 }
 #define MATRIX_ROW_PINS { B7, C7, F1, F0 }
 
@@ -35,8 +34,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define DIODE_DIRECTION COL2ROW
 
 /* USB Device descriptor parameter */
-#define VENDOR_ID       0xFEED
-#define PRODUCT_ID      0x3060
+#define VENDOR_ID       0x03eb
+#define PRODUCT_ID      0x2ff4
 #define DEVICE_VER      0x0001
 
 #define DESCRIPTION     A split keyboard
